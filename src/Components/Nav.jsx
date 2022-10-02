@@ -1,6 +1,6 @@
-import { Box, Image, Text } from '@chakra-ui/react'
+import { Box, Image, LinkOverlay, Text } from '@chakra-ui/react'
 import Dropdown from 'react-bootstrap/Dropdown';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
 import { useContext } from 'react';
 import { AuthContext } from './Contexts/AuthContext';
@@ -8,6 +8,10 @@ import { AuthContext } from './Contexts/AuthContext';
 function Navbar(){
 
 const{isAuth,ToggleAuth}=useContext(AuthContext)
+
+if(!isAuth){
+  
+}
 
 return (
     <div>
@@ -75,7 +79,7 @@ return (
 }
 {isAuth?<Text style={{marginTop:"1%" ,fontSize:'150%' ,color:"gray"}}><Link to="/engagement">Engagement</Link></Text>:<Text style={{marginTop:"1%" ,fontSize:'150%'}}><Link to="/pricing">Pricing</Link></Text>}
 
-{isAuth?<Text style={{marginTop:"1%" ,fontSize:'150%',color:"gray"}}><Link to="/startpage">Start Page</Link></Text>:<Text style={{marginTop:"1%" ,fontSize:'150%'}} >  <Link to="/blog">Blog</Link></Text>}
+{isAuth?<Text style={{marginTop:"1%" ,fontSize:'150%',color:"gray"}}><Link to="/">Start Page</Link></Text>:<Text style={{marginTop:"1%" ,fontSize:'150%'}} >  <Link to="/blog">Blog</Link></Text>}
 
 {isAuth?<Dropdown style={{marginTop:"1%"}}>
       <Dropdown.Toggle style={{background:"none",border:"none",color:"black",fontSize:"130%"}} id="dropdown-basic">
@@ -128,7 +132,7 @@ return (
 {isAuth?<Dropdown style={{marginTop:"1%"}}>
       <Dropdown.Toggle style={{background:"none",border:"none",color:"black",fontSize:"130%"}} id="dropdown-basic">
 
-        <Text>{"Hii !"}</Text>
+    <Text>{"Hii !"}</Text>
   
   
       </Dropdown.Toggle>
