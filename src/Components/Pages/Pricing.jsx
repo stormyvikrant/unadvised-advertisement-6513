@@ -1,11 +1,11 @@
 import React from 'react';
 
-function AllRoutes() {
+function Pricing() {
   return (
     <div>
-      
+
     </div>
   );
 }
 
-export default AllRoutes;
+export default Pricing;
